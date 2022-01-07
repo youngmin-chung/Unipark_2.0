@@ -30,7 +30,7 @@ namespace serverapp.Controllers
 
         // GET: api/parkinglot
         // To-Do : changed this to [Authorize] later
-        [AllowAnonymous]
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult> GetParkingLots()
         {
@@ -43,7 +43,7 @@ namespace serverapp.Controllers
 
         // GET: api/parkinglot/owner
         // To-Do : changed this to [Authorize] later
-        [AllowAnonymous]
+        [Authorize]
         [HttpGet("owner")]
         public async Task<ActionResult> GetListingParkingLots()
         {
@@ -59,7 +59,7 @@ namespace serverapp.Controllers
 
 
         // GET: api/parkinglot/id
-        [AllowAnonymous]
+        [Authorize]
         [HttpGet("{id}", Name = "GetParkingLot")]
         public async Task<ActionResult> GetParkingLot(int id)
         {
@@ -71,7 +71,7 @@ namespace serverapp.Controllers
         }
 
         // PUT: api/parkinglot/id
-        [AllowAnonymous]
+        [Authorize]
         [HttpPut("{parkingLotId}")]
         public async Task<ActionResult> UpdateParkingLot(int parkingLotId, ParkingLotUpdateDTO parkingLotUpdateDTO)
         {
@@ -96,7 +96,7 @@ namespace serverapp.Controllers
         }
 
         // POST: api/parkinglot/userId
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost("{userId}")]
         public async Task<ActionResult> CreateParkingLot(string userId, ParkingLotCreateDTO parkingLotCreateDTO)
         {
@@ -127,7 +127,7 @@ namespace serverapp.Controllers
         }
 
         // DELETE: api/parkinglot/id
-        [AllowAnonymous]
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteParkingLot(int id)
         {
@@ -149,7 +149,7 @@ namespace serverapp.Controllers
 
 
         // POST: api/parkinglot/photo/id
-        [AllowAnonymous]
+        [Authorize]
         [HttpPost("photo/{parkingLotId}")]
         public async Task<ActionResult<PhotoDTO>> AddPhoto(int parkingLotId, IFormFile file)
         {
